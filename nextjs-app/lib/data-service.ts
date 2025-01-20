@@ -1,36 +1,30 @@
 // ./nextjs-app/lib/data-service.ts
+import type { PageContent } from '@/types/content'
 import fs from 'fs/promises'
 import path from 'path'
 
 const DATA_DIR = process.env.DATA_DIR || path.join(process.cwd(), 'data')
 const CONTENT_FILE = 'content.json'
 
-export interface PageContent {
-  pages: {
-    [key: string]: {
-      title: string
-      content: string
-    }
-  }
-  navigation: {
-    links: Array<{
-      name: string
-      path: string
-    }>
-  }
-}
-
 export async function getContent(): Promise<PageContent> {
   try {
     const filePath = path.join(DATA_DIR, CONTENT_FILE)
     const content = await fs.readFile(filePath, 'utf-8')
     return JSON.parse(content)
-  } catch (error) {
+  } catch {
     return {
       pages: {
         home: {
           title: "Home",
-          content: "Welcome to my portfolio"
+          sections: [{
+            id: "welcome",
+            type: "hero",
+            content: {
+              type: "hero",
+              title: "Welcome to Web3 CMS",
+              description: "Start editing this page by connecting your wallet"
+            }
+          }]
         }
       },
       navigation: {

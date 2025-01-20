@@ -1,15 +1,7 @@
 'use client'
-import { WagmiProvider, createConfig, http } from 'wagmi'
-import { mainnet } from 'wagmi/chains'
+import { WagmiProvider } from 'wagmi'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-
-const config = createConfig({
-  chains: [mainnet],
-  connectors: [],
-  transports: {
-    [mainnet.id]: http()
-  }
-})
+import { config } from '@/config/web3'
 
 const queryClient = new QueryClient()
 

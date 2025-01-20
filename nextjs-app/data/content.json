@@ -1,0 +1,37 @@
+{
+  "pages": {
+    "home": {
+      "title": "Home",
+      "sections": [
+        {
+          "id": "welcome",
+          "type": "hero",
+          "content": {
+            "type": "hero",
+            "title": "Welcome to Web3 CMS",
+            "description": "Start editing this page by connecting your wallet - test",
+            "buttonText": "Get Started"
+          }
+        },
+        {
+          "id": "57f652ec-93b1-4032-bc56-b88a3189bf64",
+          "type": "hero",
+          "content": {
+            "type": "hero",
+            "title": "Welcome to Our Site",
+            "description": "This is a hero section",
+            "buttonText": "Get Started"
+          }
+        }
+      ]
+    }
+  },
+  "navigation": {
+    "links": [
+      {
+        "name": "Home",
+        "path": "/"
+      }
+    ]
+  }
+}
